@@ -4,7 +4,7 @@
         "siteDescription": "Restaurant React Next.JS Template",
         "formspreeURL": "https://formspree.io/f/your_api_key",
         "mapbox": {
-            "AccessToken": "*",
+            "AccessToken": "pk.eyJ1IjoiYmlyZGZyb21oZWxsIiwiYSI6ImNtNHkwMTA2aTB5cTcycnF4OGVndW9hcTMifQ.ws0mpxqhm-mBLNoqZgflhg",
             "style": "mapbox://styles/mapbox/light-v11",
             "zoom": 15,
             "long": -79.394900,
