@@ -1,7 +1,7 @@
 {
     "settings": {
-        "siteName": "Starbelly",
-        "siteDescription": "Restaurant React Next.JS Template",
+        "siteName": "Selera Rasa Sunda",
+        "siteDescription": "Catering Bandung",
         "formspreeURL": "https://formspree.io/f/your_api_key",
         "mapbox": {
             "AccessToken": "pk.eyJ1IjoiYmlyZGZyb21oZWxsIiwiYSI6ImNtNHkwMTA2aTB5cTcycnF4OGVndW9hcTMifQ.ws0mpxqhm-mBLNoqZgflhg",
@@ -21,16 +21,7 @@
             {
                 "label": "Home",
                 "link": "/",
-                "children": [
-                    {
-                        "label": "Homepage 1",
-                        "link": "/"
-                    },
-                    {
-                        "label": "Homepage 2",
-                        "link": "/home-2"
-                    }
-                ]
+                "children": 0
             },
             {
                 "label": "Pages",
@@ -70,6 +61,14 @@
                     }
                 ]
             },
+
+            {
+                "label": "Galery",
+                "link":"/gallery",
+                "children": 0
+        
+            },
+
             {
                 "label": "Menu",
                 "link": "/menu",
@@ -172,7 +171,7 @@
         ]
     },
     "footer": {
-        "copy": "© 2024 Starbelly. All rights reserved."
+        "copy": "© 2024 Selera Rasa Sunda. All rights reserved."
     },
     "social": [
         {

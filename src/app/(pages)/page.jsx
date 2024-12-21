@@ -23,7 +23,7 @@ export const metadata = {
 async function Home1() {
   return (
     <>
-      <HeroSection type={1} />
+      <HeroSection type={2} />
       <AboutSection />
       <CategoriesSection />
       <ProductsSlider items={Products.collection['popular']} slidesPerView={4} />
