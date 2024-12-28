@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from './Links.module.css'; // Assuming you will create a CSS module
+import styles from '../Links.module.css'; // Assuming you will create a CSS module
 
 export default function Home() {
     return (
