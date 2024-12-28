@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile {
+    margin-bottom: 30px;
+    background: #FFB800;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+}
+
+.profileImg {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: white;
+    color: #FFB800;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+h1 {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.link {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEEEEE;
+}
+
+.link:hover {
+    transform: translateY(-2px);
+    border-color: #FFB800;
+    box-shadow: 0 4px 12px rgba(255, 184, 0, 0.1);
+}
+
+.link i {
+    margin-right: 12px;
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+    color: #FFB800;
+}
+
+.ctaButton {
+    background: #FFB800;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: #ffa600;
+}
+
+.testimonialSection {
+    margin-top: 40px;
+    padding: 30px;
+    background: #FFF9EC;
+    border-radius: 12px;
+}
+
+.testimonial {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.author {
+    font-weight: bold;
+    color: #FFB800;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    .link {
+        padding: 14px 16px;
+    }
+}
