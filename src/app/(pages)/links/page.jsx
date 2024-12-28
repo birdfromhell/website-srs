@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from './Links.module.css'; // Adjust the path if necessary
+import styles from '../Links.module.css'; // Adjust the path if necessary
 
 export default function Home() {
     return (
