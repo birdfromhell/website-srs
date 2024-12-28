@@ -1,6 +1,6 @@
 // pages/index.js
 import Head from 'next/head';
-import styles from '../Links.module.css'; // Your CSS module for styles
+import styles from './Links.module.css'; // Your CSS module for styles
 import BioLayout from '../../_components/BioLayout'; // Import the layout
 
 export default function Home() {
