@@ -23,6 +23,11 @@
                 "link": "/",
                 "children": 0
             },
+             {
+                "label": "Tentang Kami",
+                "link": "/about",
+                "children": 0
+            },
             {
                 "label": "Pages",
                 "link": "/about",
@@ -73,38 +78,18 @@
             {
                 "label": "Blog",
                 "link": "/blog-3",
-                "children": [
-                    {
-                        "label": "Blog",
-                        "link": "/blog-3"
-                    },
-                    {
-                        "label": "Blog list",
-                        "link": "/blog"
-                    },
-                    {
-                        "label": "Blog list 2",
-                        "link": "/blog-2"
-                    },
-                    {
-                        "label": "Publication",
-                        "link": "/blog/beet-and-burrata-salad-with-fried-bread"
-                    },
-                    {
-                        "label": "Publication 2",
-                        "link": "/blog/creamy-kale-pasta"
-                    },
-                    {
-                        "label": "Publication 3",
-                        "link": "/blog/incredible-vegan-mac-and-cheese"
-                    }
-                ]
-            },
+                "children": 0
+             },
             {
                 "label": "Reviews",
                 "link":"/reviews",
                 "children": 0
         
+            },
+             {
+                "label": "FAQ",
+                "link": "/faq",
+                "children": 0
             },
             {
                 "label": "Contact",
