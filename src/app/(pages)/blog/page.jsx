@@ -1,76 +1,78 @@
 import dynamic from "next/dynamic";
-
 import AppData from "@data/app.json";
-import PopularsPostsData from "@data/sliders/popular-posts.json";
 
-import Pagination from '@components/Pagination';
 import PageBanner from "@components/PageBanner";
-import PopularPosts from "@components/sliders/PopularPosts";
-
-import { getPaginatedPostsData, getFeaturedPostsData } from "@library/posts";
-
-const BlogPaginated = dynamic( () => import("@components/blog/BlogPaginated"), { ssr: false } );
 
 export const metadata = {
   title: {
-		default: "Blog",
-	},
+    default: "Blog",
+  },
   description: AppData.settings.siteDescription,
 }
 
-async function Blog() {
-  const populars = await getAllPupulars();
-  const postsData = await getAllPosts();
-
+function Blog() {
   return (
     <>
       <PageBanner pageTitle={"Our Blog"} breadTitle={"Blog"} />
 
-      {/* blog list */}
-      <section className="sb-blog-list sb-p-90-90">
-        <div className="sb-bg-1">
-          <div></div>
-        </div>
+      {/* Under Maintenance Section */}
+      <section className="sb-maintenance sb-p-90-90">
         <div className="container">
-          <div className="sb-mb-60">
-            <h2 className="sb-cate-title sb-mb-30">Latest <span>publications</span></h2>
-            <p className="sb-text">Consectetur numquam poro nemo veniam<br/>eligendi rem adipisci quo modi.</p>
-          </div>
-
-          <BlogPaginated
-            items={postsData.posts}
-          />
-
-          <div>
-            <Pagination
-              currentPage={postsData.currentPage}
-              totalItems={postsData.totalPosts}
-              perPage={AppData.settings.perPage}
-              renderPageLink={(page) => `/blog/page/${page}`}
-            />
+          <div className="sb-maintenance-content text-center">
+            <i className="fas fa-tools sb-mb-30" style={{fontSize: '48px', color: '#666'}}></i>
+            <h2 className="sb-mb-30">Under Maintenance</h2>
+            <div className="sb-text sb-mb-30">
+              <p>We're currently working on improving our blog feature.</p>
+              <p>Please check back soon for updates!</p>
+            </div>
+            <div className="maintenance-status">
+              <div className="status-indicator">
+                <span className="dot"></span>
+                <span className="text">Development in Progress</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      {/* blog list end */}
 
-      <PopularPosts posts={populars} />
+      <style jsx>{`
+        .sb-maintenance-content {
+          padding: 60px 20px;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        .maintenance-status {
+          display: inline-block;
+          padding: 10px 20px;
+          background: #f8f9fa;
+          border-radius: 30px;
+        }
+        .status-indicator {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+        .dot {
+          width: 10px;
+          height: 10px;
+          background: #ffc107;
+          border-radius: 50%;
+          animation: blink 1.5s infinite;
+        }
+        .text {
+          color: #666;
+          font-size: 14px;
+        }
+        @keyframes blink {
+          0% { opacity: 0.4; }
+          50% { opacity: 1; }
+          100% { opacity: 0.4; }
+        }
+      `}</style>
     </>
   );
 };
+
 export default Blog;
-
-async function getAllPupulars() {
-  const popularsData = await getFeaturedPostsData( PopularsPostsData.featured )
-
-  return popularsData
-}
-
-async function getAllPosts() {
-  const { posts, total } = getPaginatedPostsData( AppData.settings.perPage, 1 );
-
-  return {
-    posts: posts,
-    totalPosts: total,
-    currentPage: 1
-  }
-}
