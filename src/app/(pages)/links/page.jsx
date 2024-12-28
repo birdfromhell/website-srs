@@ -1,9 +1,11 @@
+// pages/index.js
 import Head from 'next/head';
-import styles from '../Links.module.css'; // Adjust the path if necessary
+import styles from '../Links.module.css'; // Your CSS module for styles
+import BioLayout from '../../_components/BioLayout'; // Import the layout
 
 export default function Home() {
     return (
-        <>
+        <BioLayout>
             <Head>
                 <title>Catering Nusantara - Link Bio</title>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -55,6 +57,6 @@ export default function Home() {
                     <p className={styles.author}>- Budi, Bandung</p>
                 </div>
             </div>
-        </>
+        </BioLayout>
     );
 }
