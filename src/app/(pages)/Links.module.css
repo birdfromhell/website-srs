@@ -1,4 +1,4 @@
-/* pages/Home.module.css */
+/* src/app/(pages)/Links.module.css */
 .container {
     max-width: 680px;
     margin: 0 auto;
@@ -27,13 +27,13 @@
     margin: 0 auto 15px;
 }
 
-h1 {
+.profileTitle {
     margin-bottom: 8px;
     font-size: 24px;
     font-weight: 600;
 }
 
-p {
+.profileDescription {
     margin-bottom: 20px;
     font-size: 16px;
 }
@@ -110,8 +110,8 @@ p {
     .container {
         padding: 15px;
     }
-    
-    h1 {
+
+    .profileTitle {
         font-size: 20px;
     }
 

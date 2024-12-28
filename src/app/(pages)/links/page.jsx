@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../Links.module.css'; // Assuming you will create a CSS module
+import styles from './Links.module.css'; // Adjust the path if necessary
 
 export default function Home() {
     return (
@@ -11,8 +11,8 @@ export default function Home() {
             <div className={styles.container}>
                 <div className={styles.profile}>
                     <div className={styles.profileImg}>🍽️</div>
-                    <h1>Catering Nusantara</h1>
-                    <p>Melayani berbagai kebutuhan catering untuk acara Anda</p>
+                    <h1 className={styles.profileTitle}>Catering Nusantara</h1>
+                    <p className={styles.profileDescription}>Melayani berbagai kebutuhan catering untuk acara Anda</p>
                     <a href="#" className={styles.ctaButton}>Pesan Sekarang</a>
                 </div>
 
