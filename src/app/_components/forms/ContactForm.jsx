@@ -8,15 +8,15 @@ const ContactForm = () => {
     <>
         {/* contact form */}
         <Formik
-        initialValues = {{ email: '', name: '', message: '' }}
+        initialValues = {{ whatsapp: '', name: '', message: '' }}
         validate = { values => {
             const errors = {};
-            if (!values.email) {
-                errors.email = 'Required';
+            if (!values.whatsapp) {
+                errors.whatsapp = 'Required';
             } else if (
-                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                !/^\+?[1-9]\d{1,14}$/i.test(values.whatsapp) // Validasi nomor telepon (format E.164)
             ) {
-                errors.email = 'Invalid email address';
+                errors.whatsapp = 'Invalid WhatsApp number';
             }
             return errors;
         }}
@@ -26,7 +26,7 @@ const ContactForm = () => {
             const data = new FormData();
 
             data.append('name', values.name);
-            data.append('email', values.email);
+            data.append('whatsapp', values.whatsapp);
             data.append('message', values.message);
 
             fetch(form.action, {
@@ -82,16 +82,19 @@ const ContactForm = () => {
             </div>
             <div className="sb-group-input">
                 <input 
-                    type="email" 
+                    type="text" 
                     placeholder=" "
-                    name="email"
+                    name="whatsapp"
                     required="required"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    value={values.email} 
+                    value={values.whatsapp} 
                 />
                 <span className="sb-bar"></span>
-                <label>Email</label>
+                <label>WhatsApp Number</label>
+                {errors.whatsapp && touched.whatsapp && (
+                    <div className="error">{errors.whatsapp}</div>
+                )}
             </div>
             <div className="sb-group-input">
                 <textarea 
@@ -106,7 +109,7 @@ const ContactForm = () => {
                 <label>Message</label>
             </div>
             <p className="sb-text sb-text-xs sb-mb-30">*We promise not to disclose your <br/>personal information to third parties.</p>
-            
+
             {/* button */}
             <button type="submit" className="sb-btn sb-cf-submit sb-show-success">
                 <span className="sb-icon">
