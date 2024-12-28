@@ -44,10 +44,6 @@
                         "link": "/gallery-2"
                     },
                     {
-                        "label": "Reviews",
-                        "link": "/reviews"
-                    },
-                    {
                         "label": "Reservation",
                         "link": "/reservation"
                     },
