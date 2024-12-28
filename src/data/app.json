@@ -105,6 +105,12 @@
                 ]
             },
             {
+                "label": "Reviews",
+                "link":"/reviews",
+                "children": 0
+        
+            },
+            {
                 "label": "Contact",
                 "link": "/contact",
                 "children": 0
