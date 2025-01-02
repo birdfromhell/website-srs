@@ -67,7 +67,7 @@ const Hero = ( { type } ) => {
                         ) : (
                         <div className="sb-ilustration-fix">
                             <div className="sb-illustration-1-2">
-                                <img src="/img/illustrations/1.png" alt="food" className="sb-food-1" />
+                                <img src="/img/illustrations/1.2.png" alt="food" className="sb-food-1" />
                                 <img src="/img/illustrations/2.png" alt="food" className="sb-food-2" />
                                 <img src="/img/illustrations/3.png" alt="food" className="sb-food-3" />
 
