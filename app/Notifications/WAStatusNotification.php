@@ -101,7 +101,22 @@ class WAStatusNotification extends Notification
             }
         }
 
-        return (new WhatsAppMessage)->content($message);
+        $apiKey = '1234567890'; // Replace with your actual API key
+        $sender = '62888xxxx'; // Replace with your actual sender number
+        $footer = 'Sent via mpwa';
+
+        $client = new \GuzzleHttp\Client();
+        $response = $client->post('https://wa.selera-rasa-sunda.id/send-message', [
+            'json' => [
+                'api_key' => $apiKey,
+                'sender' => $sender,
+                'number' => $notifiable->routeNotificationFor('WhatsApp'),
+                'message' => $message,
+                'footer' => $footer
+            ]
+        ]);
+
+        return $response;
     }
 
     public function setCurrPos($amount, $be)

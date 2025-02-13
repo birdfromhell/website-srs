@@ -228,7 +228,7 @@ class PaymentController extends Controller
                             $tf = TimeFrame::find($request->delivery_time);
                             // if maximum orders limit is not unlimited
                             if (!empty($tf) && $tf->max_orders != 0) {
-                                $orderCount = ProductOrder::where('order_status', '<>', 'cancelled')
+                                $orderCount = ProductOrder::where('order_status', '<>','cancelled')
                                     ->where('delivery_time_start', $tf->start)
                                     ->where('delivery_time_end', $tf->end)
                                     ->count();
@@ -451,10 +451,20 @@ class PaymentController extends Controller
         if (($order->serving_method == 'home_delivery' && $bex->whatsapp_home_delivery == 1) || ($order->serving_method == 'pick_up' && $bex->whatsapp_pickup == 1) || ($order->serving_method == 'on_table' && $bex->whatsapp_on_table == 1)) {
             try {
                 // whatsapp notification
-                Config::set('services.twilio.sid', $bex->twilio_sid);
-                Config::set('services.twilio.token', $bex->twilio_token);
-                Config::set('services.twilio.whatsapp_from', $bex->twilio_phone_number);
-                $order->notify(new WhatsappNotification($order));
+                $apiKey = env('API_KEY'); // Use the API key from .env
+                $sender = env('SENDER'); // Use the sender number from .env
+                $footer = 'Sent via mpwa';
+
+                $client = new \GuzzleHttp\Client();
+                $response = $client->post('https://wa.selera-rasa-sunda.id/send-message', [
+                    'json' => [
+                        'api_key' => $apiKey,
+                        'sender' => $sender,
+                        'number' => $order->billing_number,
+                        'message' => 'Your order has been placed successfully.',
+                        'footer' => $footer
+                    ]
+                ]);
             } catch (\Exception $e) {
                 dd($e);
             }

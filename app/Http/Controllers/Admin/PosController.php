@@ -413,10 +413,20 @@ class PosController extends Controller
         if (($po->serving_method == 'home_delivery' && $bex->whatsapp_home_delivery == 1) || ($po->serving_method == 'pick_up' && $bex->whatsapp_pickup == 1) || ($po->serving_method == 'on_table' && $bex->whatsapp_on_table == 1)) {
             try {
                 // whatsapp notification
-                Config::set('services.twilio.sid', $bex->twilio_sid);
-                Config::set('services.twilio.token', $bex->twilio_token);
-                Config::set('services.twilio.whatsapp_from', $bex->twilio_phone_number);
-                $po->notify(new WhatsappNotification($po));
+                $apiKey = '1234567890'; // Replace with your actual API key
+                $sender = '62888xxxx'; // Replace with your actual sender number
+                $footer = 'Sent via mpwa';
+
+                $client = new \GuzzleHttp\Client();
+                $response = $client->post('https://wa.selera-rasa-sunda.id/send-message', [
+                    'json' => [
+                        'api_key' => $apiKey,
+                        'sender' => $sender,
+                        'number' => $po->billing_number,
+                        'message' => 'Your order has been placed successfully.',
+                        'footer' => $footer
+                    ]
+                ]);
             } catch (\Exception $e) {}
         }
 
