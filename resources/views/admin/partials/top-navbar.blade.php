@@ -29,7 +29,7 @@
         <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
           <!-- WhatsApp Link -->
           <li class="nav-item mr-3">
-            <a class="nav-link" href="https://wa.selera-rasa-sunda.id/" target="_blank">
+            <a class="nav-link" href="https://wa.selera-rasa-sunda.id/en/home" target="_blank">
               <i class="fab fa-whatsapp" style="font-size: 24px; color: #25D366;"></i>
             </a>
           </li>
