@@ -1,7 +1,6 @@
 <div class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark2">
-
       <a href="{{route('front.index')}}" class="logo" target="_blank">
         <img src="{{asset('assets/front/img/'.$bs->logo)}}" alt="navbar brand" class="navbar-brand" width="120">
       </a>
@@ -26,11 +25,16 @@
 
     <!-- Navbar Header -->
     <nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
-
       <div class="container-fluid">
-
         <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+          <!-- WhatsApp Link -->
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="https://wa.selera-rasa-sunda.id/" target="_blank">
+              <i class="fab fa-whatsapp" style="font-size: 24px; color: #25D366;"></i>
+            </a>
+          </li>
 
+          <!-- Profile Dropdown -->
           <li class="nav-item dropdown hidden-caret">
             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
               <div class="avatar-sm">
@@ -54,7 +58,8 @@
                     </div>
                     <div class="u-text">
                       <h4>{{Auth::guard('admin')->user()->first_name}}</h4>
-                      <p class="text-muted">{{Auth::guard('admin')->user()->email}}</p><a href="{{route('admin.editProfile')}}" class="btn btn-xs btn-secondary btn-sm">Edit Profile</a>
+                      <p class="text-muted">{{Auth::guard('admin')->user()->email}}</p>
+                      <a href="{{route('admin.editProfile')}}" class="btn btn-xs btn-secondary btn-sm">Edit Profile</a>
                     </div>
                   </div>
                 </li>
