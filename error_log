@@ -1,0 +1,18 @@
+[13-Feb-2025 06:19:59 UTC] PHP Parse error:  syntax error, unexpected '|', expecting variable (T_VARIABLE) in /home/selerar1/public_html/vendor/nunomaduro/termwind/src/Functions.php on line 17
+[13-Feb-2025 06:20:02 UTC] PHP Parse error:  syntax error, unexpected '|', expecting variable (T_VARIABLE) in /home/selerar1/public_html/vendor/nunomaduro/termwind/src/Functions.php on line 17
+[13-Feb-2025 06:20:05 UTC] PHP Parse error:  syntax error, unexpected '|', expecting variable (T_VARIABLE) in /home/selerar1/public_html/vendor/nunomaduro/termwind/src/Functions.php on line 17
+[13-Feb-2025 06:21:44 UTC] PHP Warning:  Module 'igbinary' already loaded in Unknown on line 0
+[13-Feb-2025 06:21:44 UTC] PHP Warning:  Module 'json' already loaded in Unknown on line 0
+[13-Feb-2025 06:22:48 UTC] PHP Warning:  Module "dom" is already loaded in Unknown on line 0
+[13-Feb-2025 06:22:48 UTC] PHP Warning:  Module "mbstring" is already loaded in Unknown on line 0
+[13-Feb-2025 06:22:48 UTC] PHP Warning:  Module "igbinary" is already loaded in Unknown on line 0
+[13-Feb-2025 06:23:26 UTC] PHP Warning:  Module "dom" is already loaded in Unknown on line 0
+[13-Feb-2025 06:23:26 UTC] PHP Warning:  Module "mbstring" is already loaded in Unknown on line 0
+[13-Feb-2025 06:23:26 UTC] PHP Warning:  Module "igbinary" is already loaded in Unknown on line 0
+[13-Feb-2025 06:47:32 UTC] PHP Warning:  require(/home/selerar1/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/selerar1/public_html/public/index.php on line 28
+[13-Feb-2025 06:47:32 UTC] PHP Warning:  require(/home/selerar1/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/selerar1/public_html/public/index.php on line 28
+[13-Feb-2025 06:47:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/selerar1/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/selerar1/public_html/public/index.php:28
+Stack trace:
+#0 /home/selerar1/public_html/server.php(21): require_once()
+#1 {main}
+  thrown in /home/selerar1/public_html/public/index.php on line 28
